@@ -1,0 +1,1 @@
+web: bin/stordly eval "Stordly.Release.migrate" && bin/stordly start

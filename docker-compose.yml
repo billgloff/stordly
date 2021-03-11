@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  application:
+    image: stordly:0.0.1
+    container_name: stordly
+    env_file: .env
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@postgresql/stordly_dev
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgresql
+  postgresql:
+    image: postgres:12-alpine
+    container_name: stordly-postgres
+    environment:
+      - POSTGRES_DB=stordly_dev
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - stordly_psql:/var/lib/postgresql/data
+volumes:
+  stordly_psql:

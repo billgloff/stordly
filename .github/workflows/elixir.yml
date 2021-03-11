@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  mix_test:
+    name: mix test (Elixir ${{matrix.elixir}} | Erlang/OTP ${{matrix.otp}})
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: stordly_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - elixir: 1.11.1
+            otp: 23.1.1
+            check_formatted: true
+    env:
+      MIX_ENV: test
+    steps:
+      - uses: actions/checkout@v2.3.2
+      - uses: actions/setup-elixir@v1.5.0
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+          experimental-otp: true
+      - name: Install Dependencies
+        run: |
+          mix local.hex --force
+          mix local.rebar --force
+          mix deps.get
+      - run: mix compile --warnings-as-errors
+        if: matrix.warnings_as_errors
+      - run: mix format --check-formatted
+        if: matrix.check_formatted
+      - name: Run Credo
+        run: mix credo
+      - name: Run Tests
+        run: mix test --trace --slowest 10
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs:
+      - mix_test
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.6.0
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Deploy to staging
+        uses: mhanberg/gigalixir-action@v0.4.0
+        with:
+          GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
+          GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
+          GIGALIXIR_APP: stordly
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          MIGRATIONS: false
