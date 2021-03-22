@@ -24,6 +24,6 @@ mix setup
 
 mix phx.gen.secret
 
-sed "s/YOUR_SECRET_KEY_BASE_HERE/$(mix phx.gen.secret)/" .env.example > .env
+sed "s@YOUR_SECRET_KEY_BASE_HERE@$(mix phx.gen.secret)@" .env.example > .env
 
-success "Setup complete.  Start with bin/start"
+success "Setup complete.  Start with make server"

@@ -49,6 +49,7 @@ that was generated while running the application.
 
 Assumptions
 ===========
+* Bash scripts tested on Mac OS 11
 * ASDF is available on the host machine.
 * Postgres is available on the host machine with a user `postgres` and password `postgres`. 
   If this user account is not available, please modify the .env file to use the correct credentials.
