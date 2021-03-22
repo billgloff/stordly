@@ -69,6 +69,8 @@ defmodule StordlyWeb do
       import StordlyWeb.ErrorHelpers
       import StordlyWeb.Gettext
       alias StordlyWeb.Router.Helpers, as: Routes
+
+      import ReactPhoenix.ClientSide
     end
   end
 

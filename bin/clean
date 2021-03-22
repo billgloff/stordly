@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+source ./bin/utils/functions.sh
+
+header "Cleaning..."
+
+rm -rf .env
+rm -rf _build
+rm -rf assets/node_modules
+
+success "Cleaning complete."

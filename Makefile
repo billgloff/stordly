@@ -19,3 +19,6 @@ server:
 # your test suite.
 test:
 	./bin/test
+
+clean:
+	./bin/clean

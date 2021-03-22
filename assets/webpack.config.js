@@ -28,20 +28,20 @@ module.exports = (env, options) => {
         },
         {
           test: /\.[s]?css$/,
-					use: [				
-						{
-							loader: MiniCssExtractPlugin.loader,
-							options: {
-								esModule: true,
-								modules: {
-									namedExport: true,
-								},
-							},
-						},        
-						'css-loader',
-						'postcss-loader',
-						'sass-loader',
-					],
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                esModule: true,
+                modules: {
+                  namedExport: true,
+                },
+              },
+            },
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
+          ],
         },
       ],
     },

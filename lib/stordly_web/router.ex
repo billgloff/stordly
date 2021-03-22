@@ -17,12 +17,15 @@ defmodule StordlyWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/:slug", PageController, :show
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", StordlyWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", StordlyWeb do
+    pipe_through :api
+
+    resources "/links", LinkController, only: [:create, :show]
+  end
 
   # Enables LiveDashboard only for development
   #

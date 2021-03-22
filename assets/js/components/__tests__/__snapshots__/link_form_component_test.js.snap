@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders an error with an invalid url 1`] = `
+<DocumentFragment>
+  <form
+    class="pb-20 block"
+  >
+    <div
+      class="grid grid-cols-8 gap-4 bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4 my-2"
+    >
+      <div
+        class="col-span-7"
+      >
+        <label
+          class="show-for-sr"
+          for="shorten_url"
+        >
+          Enter URL to be shortened
+        </label>
+        <input
+          class="shorten-input"
+          id="shorten_url"
+          placeholder="Shorten your link"
+          required=""
+          role="textbox"
+          size="2048"
+          type="url"
+          value=""
+        />
+      </div>
+      <div
+        class=""
+      >
+        <button
+          class="shorten-button button-large button-primary button"
+          type="submit"
+        >
+          Shorten
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Renders an error with an invalid url 2`] = `
+<DocumentFragment>
+  <form
+    class="pb-20 block"
+  >
+    <div
+      class="grid grid-cols-8 gap-4 bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4 my-2"
+    >
+      <div
+        class="col-span-7"
+      >
+        <label
+          class="show-for-sr"
+          for="shorten_url"
+        >
+          Enter URL to be shortened
+        </label>
+        <input
+          class="shorten-input"
+          id="shorten_url"
+          placeholder="Shorten your link"
+          required=""
+          role="textbox"
+          size="2048"
+          type="url"
+          value="httttps://www"
+        />
+        <span
+          class="bg-red-100 border border-red-400 text-red-700 px-4 mt-4 mb-4 rounded relative block"
+          role="alert"
+        >
+          <strong
+            class="font-bold"
+          >
+            URL is not a valid URL!
+          </strong>
+        </span>
+      </div>
+      <div
+        class=""
+      >
+        <button
+          class="shorten-button button-large button-primary button"
+          type="submit"
+        >
+          Shorten
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Successfully shortens a given url 1`] = `
+<DocumentFragment>
+  <form
+    class="pb-20 block"
+  >
+    <div
+      class="grid grid-cols-8 gap-4 bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4 my-2"
+    >
+      <div
+        class="col-span-7"
+      >
+        <label
+          class="show-for-sr"
+          for="shorten_url"
+        >
+          Enter URL to be shortened
+        </label>
+        <input
+          class="shorten-input"
+          id="shorten_url"
+          placeholder="Shorten your link"
+          required=""
+          role="textbox"
+          size="2048"
+          type="url"
+          value=""
+        />
+      </div>
+      <div
+        class=""
+      >
+        <button
+          class="shorten-button button-large button-primary button"
+          type="submit"
+        >
+          Shorten
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Successfully shortens a given url 2`] = `
+<DocumentFragment>
+  <form
+    class="pb-20 block"
+  >
+    <div
+      class="grid grid-cols-8 gap-4 bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4 my-2"
+    >
+      <div
+        class="col-span-7"
+      >
+        <label
+          class="show-for-sr"
+          for="shorten_url"
+        >
+          Enter URL to be shortened
+        </label>
+        <input
+          class="shorten-input"
+          id="shorten_url"
+          placeholder="Shorten your link"
+          required=""
+          role="textbox"
+          size="2048"
+          type="url"
+          value="http://localhost/ABC1234"
+        />
+      </div>
+      <div
+        class=""
+      >
+        <div>
+          <button
+            class="shorten-button button-large button-primary button}"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

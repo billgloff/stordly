@@ -32,3 +32,46 @@
 }
 
 @tailwind utilities;
+
+.shorten-input {
+	@apply w-full bg-white border-solid overflow-hidden border inline-block h-16 text-xl mb-0 mr-5 py-0 px-5;
+	border-color: rgba(211, 212, 215, 1);
+	border-radius: 8px 8px 8px 8px;
+	color: rgba(54, 56, 59, 1);
+}
+
+.shorten-button {
+	@apply float-left mb-0 relative align-bottom hover:bg-blue-700;
+	background-color: #1b3987;
+	min-width: 25%;
+}
+
+.copy-button {
+	@apply float-left mb-0 relative align-bottom bg-green-700 hover:bg-green-500;
+	min-width: 25%;
+}
+
+.button-lg,
+.button-large {
+	@apply text-xl py-4 px-8 h-16;
+	line-height: 1.11;
+}
+
+.button-primary {
+	@apply rounded-md text-white no-underline;
+	transition: background 100ms linear;
+	outline: none;
+}
+
+.button {
+	@apply border-transparent rounded-none border-solid border cursor-pointer inline-block text-2xl leading-none mx-0 mt-0 mb-4 py-3 px-4 text-center text-white align-middle;
+	transition: background-color 0.25s ease-out, color 0.25s ease-out;
+	border-radius: 8px 8px 8px 8px;
+	font-family: "ProximaNova Regular";
+}
+
+.show-for-sr,
+.show-on-focus {
+	@apply border-0 h-px overflow-hidden p-0 absolute whitespace-nowrap w-px;
+	clip: rect(0px, 0px, 0px, 0px);
+}
