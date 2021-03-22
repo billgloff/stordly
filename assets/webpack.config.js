@@ -54,6 +54,12 @@ module.exports = (env, options) => {
     optimization: {
       minimizer: [new TerserPlugin({}), new CssMinimizerPlugin({})],
     },
+    resolve: {
+      alias: {
+        react: path.resolve(__dirname, './node_modules/react'),
+        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      },
+    },
     devtool: devMode ? 'eval-cheap-module-source-map' : undefined,
   }
 }
