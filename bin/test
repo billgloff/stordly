@@ -14,7 +14,10 @@ mix format --check-formatted
 header "Checking credo..."
 mix credo --strict
 
-header "Running tests..."
+header "Running backend tests..."
 mix test
+
+header "Running frontend tests..."
+yarn test
 
 success "Testing complete."

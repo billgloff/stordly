@@ -35,7 +35,8 @@ To start the application (after git clone), run the following:
 
   2. Please verify the generated `.env` file has correct values for your environment.
 
-  3. Run the test suite with `make test`
+  3. Run the backend and frontend test suites
+ with `make test`
 
   4. Start the application with `make server`
 
