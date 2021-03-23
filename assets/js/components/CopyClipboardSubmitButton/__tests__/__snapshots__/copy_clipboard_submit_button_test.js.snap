@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Successfully shows Copied! when clicked 1`] = `
+<DocumentFragment>
+  <div>
+    <button
+      class="shorten-button button-large button-primary button}"
+    >
+      Copy
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Successfully shows Copied! when clicked 2`] = `
+<DocumentFragment>
+  <div>
+    <button
+      class="copy-button button-large button-primary button}"
+    >
+      Copied!
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Successfully shows Copy Clipboard Button 1`] = `
+<DocumentFragment>
+  <div>
+    <button
+      class="shorten-button button-large button-primary button}"
+    >
+      Copy
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Successfully shows normal Submit Button 1`] = `
+<DocumentFragment>
+  <button
+    class="shorten-button button-large button-primary button"
+    type="submit"
+  >
+    Shorten
+  </button>
+</DocumentFragment>
+`;
